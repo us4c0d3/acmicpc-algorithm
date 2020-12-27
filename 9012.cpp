@@ -5,6 +5,7 @@
 #define TRUE 1
 #define FALSE 0
 
+
 //push, pop, isEmpty
 
 typedef struct _stack{
@@ -25,9 +26,8 @@ void Push(Stack * sp, char data) {
   sp->arr[++(sp->top)] = data;
 }
 
-
-char Pop(Stack * sp) {
-  if(isEmpty) return 'c';
+char pop(Stack * sp) {
+  if(isEmpty) return;
   return sp->arr[(sp->top)--];
 }
 
@@ -50,6 +50,11 @@ int main() {
       }
       else {
         temp = Pop(&vps);
+
+    while(ps[j] != "\0") {
+      if(ps[j] == '(') push(&vps);
+      else {
+        temp = pop(&vps);
         if(temp != '(') {
           k = -1;
           break;
@@ -65,4 +70,5 @@ int main() {
   }
 
   return 0;
+
 }
