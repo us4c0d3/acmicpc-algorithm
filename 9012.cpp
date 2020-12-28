@@ -5,10 +5,10 @@
 #define TRUE 1
 #define FALSE 0
 
-//push, pop, isEmpty
+//push, pop, isEmpty, isFull
 
 typedef struct _stack{
-  char arr[STACK_SIZE];
+  int arr[STACK_SIZE];
   int top;
 } Stack;
 
@@ -16,18 +16,23 @@ void stack_init(Stack * sp) {
   sp->top = -1;
 }
 
+bool isFull(Stack * sp) {
+  if(sp->top+1 >= STACK_SIZE) return TRUE;
+  return FALSE;
+}
+
+void Push(Stack * sp, char data) {
+  if(isFull(sp)) return;
+  sp->arr[++(sp->top)] = data;
+}
+
 bool isEmpty(Stack * sp) {
   if(sp->top == -1) return TRUE;
   return FALSE;
 }
 
-void Push(Stack * sp, char data) {
-  sp->arr[++(sp->top)] = data;
-}
-
-
-char Pop(Stack * sp) {
-  if(isEmpty) return 'c';
+int Pop(Stack * sp) {
+  if(isEmpty(sp)) return -1;
   return sp->arr[(sp->top)--];
 }
 
@@ -37,8 +42,8 @@ int main() {
   scanf("%d", &n);
 
   for(int i = 0; i < n; i++) {
-    int j = 0, k = 0;
-    char ps[SIZE], temp;
+    int j = 0, k = 0, temp;
+    char ps[SIZE];
     scanf("%s", ps);
     getchar();
 
@@ -46,22 +51,23 @@ int main() {
 
     while(ps[j] != '\0') {
       if(ps[j] == '(')  {
-        Push(&vps);
+        Push(&vps, 1);
       }
       else {
         temp = Pop(&vps);
-        if(temp != '(') {
+        if(temp != 1) {
           k = -1;
           break;
         }
       }
+      j++;
     }
 
-    if(!isEmpty || k == -1) {
+    if(!isEmpty(&vps) || k == -1) {
       printf("NO\n");
-      break;
-    }
+    } else {
     printf("YES\n");
+    }
   }
 
   return 0;
