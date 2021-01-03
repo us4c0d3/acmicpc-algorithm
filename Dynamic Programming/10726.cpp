@@ -1,3 +1,5 @@
+//noj.am/10726
+//Dynamic Programming
 #include <stdio.h>
 
 int memo[1001] = {1, 1, 2};

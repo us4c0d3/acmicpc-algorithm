@@ -1,3 +1,5 @@
+//noj.am/2231
+//Brute Force
 #include <stdio.h>
 
 int main(void) {

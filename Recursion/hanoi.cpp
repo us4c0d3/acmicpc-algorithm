@@ -1,3 +1,5 @@
+//noj.am/1914
+//Recursion
 #include <stdio.h>
 
 int hanoi(int amount, int start, int end);

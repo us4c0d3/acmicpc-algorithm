@@ -1,3 +1,5 @@
+//noj.am/10773
+//Stack
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>

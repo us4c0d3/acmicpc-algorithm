@@ -1,3 +1,5 @@
+//noj.am/5568
+//Brute Force
 #include <stdio.h>
 
 int ans[31][31];

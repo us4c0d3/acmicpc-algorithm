@@ -1,3 +1,5 @@
+//noj.am/9012
+//Stack
 #include <stdio.h>
 #include <string.h>
 #define SIZE 60
