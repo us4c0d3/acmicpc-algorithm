@@ -16,9 +16,9 @@ int main() {
 		}
 	}
 
-  for(i = 0; i < n; i++) {
+  for(i = 1; i < n; i++) {
     for(j = 0; j <= i; j++) {
-      if(i == 0) {
+      if(j == 0) {
         tri[i][j] += tri[i-1][0];
       } else if(i == j) {
         tri[i][j] += tri[i-1][j-1];

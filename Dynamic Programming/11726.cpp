@@ -1,4 +1,4 @@
-//noj.am/10726
+//noj.am/11726
 //Dynamic Programming
 #include <stdio.h>
 
@@ -20,4 +20,3 @@ int main() {
 
 	return 0;
 }
-
