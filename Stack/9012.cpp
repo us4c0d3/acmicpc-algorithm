@@ -1,4 +1,4 @@
-//noj.am/9012
+//https://www.acmicpc.net/problem/9012
 //Stack
 #include <stdio.h>
 #include <string.h>

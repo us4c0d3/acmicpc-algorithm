@@ -1,4 +1,4 @@
-//noj.am/1914
+//https://www.acmicpc.net/problem/1914
 //Recursion
 #include <stdio.h>
 
@@ -23,6 +23,3 @@ int hanoi(int amount, int start, int end) {
 	
 	hanoi(amount - 1, 6 - (start+end), end);
 }
-
-
-//i cant understand it now fuck

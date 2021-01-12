@@ -1,15 +1,15 @@
-//https://www.acmicpc.net/problem/10773
+//https://www.acmicpc.net/problem/1918
 //Stack
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
 
-#define MAX_SIZE 100000
+#define MAX_SIZE 100
 
-//push, pop, isEmpty, size, top
+//push, pop, isEmpty, size, peek
 
 typedef struct _stack {
-  int arr[MAX_SIZE];
+  char arr[MAX_SIZE];
   int top;
 } Stack;
 
@@ -32,7 +32,7 @@ void Push(Stack * sp, int data){
   sp->arr[++(sp->top)] = data;
 }
 
-int Pop(Stack * sp) {
+char Pop(Stack * sp) {
   if(isEmpty(sp) == 1) return -1;
   return sp->arr[(sp->top)--];
 }
@@ -41,34 +41,17 @@ int Size(Stack * sp) {
   return sp->top+1;
 }
 
-int Top(Stack * sp) {
+char Peek(Stack * sp) {
   if(isEmpty(sp) == 1) return -1;
   return sp->arr[sp->top];
 }
 
-int main(void) {
-  int n, temp;
-  Stack stack;
-  stack_init(&stack);
-  scanf("%d", &n);
+int main() {
+  Stack num, cal;
+  stack_init(&num);
+  stack_init(&cal);
 
-  for(int i = 0; i < n; i++) {
-    scanf("%d", &temp);
-    if(temp != 0) {
-      Push(&stack, temp);
-    } else {
-      Pop(&stack);
-    }
-    
-  }
-
-  int sum = 0;
-
-  for(int j = 0; j <= stack.top; j++) {
-    sum += stack.arr[j];
-  }
-
-  printf("%d\n", sum);
+  
 
   return 0;
 }

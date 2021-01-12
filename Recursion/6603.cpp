@@ -1,4 +1,4 @@
-//noj.am/6603
+//https://www.acmicpc.net/problem/6603
 //Recursion
 #include <stdio.h>
 

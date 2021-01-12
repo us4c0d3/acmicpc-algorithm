@@ -1,4 +1,4 @@
-//noj.am/10828
+//https://www.acmicpc.net/problem/10828
 //Stack
 #include <stdio.h>
 #include <stdlib.h>

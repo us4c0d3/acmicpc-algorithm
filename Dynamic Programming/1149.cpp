@@ -1,4 +1,4 @@
-//noj.am/1149
+//https://www.acmicpc.net/problem/1149
 //Dynamic Programming
 #include <stdio.h>
 
