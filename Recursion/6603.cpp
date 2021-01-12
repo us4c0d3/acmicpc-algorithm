@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 //https://www.acmicpc.net/problem/6603
+=======
+//noj.am/6603
+>>>>>>> 326649ecc6bd774a4243e0f0d7142a197e83865d
 //Recursion
 #include <stdio.h>
 

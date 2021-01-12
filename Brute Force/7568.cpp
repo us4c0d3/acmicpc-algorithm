@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 //https://www.acmicpc.net/problem/7568
+=======
+//noj.am/7568
+>>>>>>> 326649ecc6bd774a4243e0f0d7142a197e83865d
 //Brute Force
 #include <stdio.h>
 
