@@ -6,7 +6,7 @@
 
 #define MAX_SIZE 100
 
-//push, pop, isEmpty, size, peek
+//push, pop, isEmpty, isFull, rank
 
 typedef struct _stack {
   char arr[MAX_SIZE];
@@ -27,7 +27,7 @@ bool isFull(Stack * sp) {
   return false;
 }
 
-void Push(Stack * sp, int data){
+void Push(Stack * sp, char data){
   if(isFull(sp) == 1) return;
   sp->arr[++(sp->top)] = data;
 }
@@ -41,17 +41,43 @@ int Size(Stack * sp) {
   return sp->top+1;
 }
 
-char Peek(Stack * sp) {
-  if(isEmpty(sp) == 1) return -1;
-  return sp->arr[sp->top];
+int Rank(char data) {
+  if(data == '(') return 3;
+  if(data == '*' || data == '/') return 2;
+  if(data == '+' || data == '-') return 1;
+  if(data == ')') return 0;
 }
 
 int main() {
-  Stack num, cal;
-  stack_init(&num);
-  stack_init(&cal);
+  int now_rank = 0, i = 0, j = 0;
+  int temp = 0;
+  char infix[100];
+  char postfix[100] = {0, };
+  scanf("%s", infix);
+  Stack oper;
+  stack_init(&oper);
 
-  
+  while(infix[i] != '\0') {
+    if(infix[i] >= 'A' && infix[i] <= 'B') {
+      postfix[j] = infix[i];
+      j++;
+    } else {
+      if(temp <= Rank(infix[i])) {
+        Push(&oper, infix[i]);
+        temp = Rank(infix[i]);
+      } else {
+        while(!isEmpty(&oper)) {
+          temp = 0;
+          postfix[j] = Pop(&oper);
+          j++;
+        }
+      }
+    }
+    i++;
+  }
 
+  for(int k = 0; k < i; k++) {
+    printf("%c", postfix[k]);
+  }
   return 0;
 }
