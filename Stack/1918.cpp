@@ -1,57 +1,50 @@
 //https://www.acmicpc.net/problem/1918
 //Stack
 #include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
+#include <string>
+#include <iostream>
+#include <stack>
 
-#define MAX_SIZE 100
+using namespace std;
 
-//push, pop, isEmpty, size, peek
-
-typedef struct _stack {
-  char arr[MAX_SIZE];
-  int top;
-} Stack;
-
-void stack_init(Stack * sp) {
-  sp->top = -1;
-}
-
-bool isEmpty(Stack * sp) {
-  if(sp->top == -1) return true;
-  return false;
-}
-
-bool isFull(Stack * sp) {
-  if(sp->top + 1 >= MAX_SIZE) return true;
-  return false;
-}
-
-void Push(Stack * sp, int data){
-  if(isFull(sp) == 1) return;
-  sp->arr[++(sp->top)] = data;
-}
-
-char Pop(Stack * sp) {
-  if(isEmpty(sp) == 1) return -1;
-  return sp->arr[(sp->top)--];
-}
-
-int Size(Stack * sp) {
-  return sp->top+1;
-}
-
-char Peek(Stack * sp) {
-  if(isEmpty(sp) == 1) return -1;
-  return sp->arr[sp->top];
+int Rank(char data) {
+  if(data == '(') return 3;
+  if(data == '*' || data == '/') return 2;
+  if(data == '+' || data == '-') return 1;
+  if(data == ')') return 0;
 }
 
 int main() {
-  Stack num, cal;
-  stack_init(&num);
-  stack_init(&cal);
+  int now_rank = 0, i = 0, j = 0;
+  string infix;
+  char postfix[100] = {0, };
+  cin >> infix;
 
-  
+  stack<char> oper;
 
+
+  while(i < infix.length()) {
+    if(infix.at(i) >= 'A' && infix.at(i) <= 'Z') {
+      postfix[j] = infix.at(i);
+      j++;
+    } else {
+      if(now_rank <= Rank(infix.at(i))) {
+        oper.push(infix.at(i));
+        now_rank = Rank(infix.at(i));
+      } else {
+        while(!oper.empty()) {
+          now_rank = 0;
+          postfix[j] = oper.top();
+          oper.pop();
+          j++;
+        }
+      }
+    }
+    i++;
+  }
+
+  for(int k = 0; k < infix.length(); k++) {
+    printf("%c", postfix[k]);
+  }
   return 0;
 }
