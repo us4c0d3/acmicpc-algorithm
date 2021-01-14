@@ -1,6 +1,5 @@
 //https://www.acmicpc.net/problem/1918
 //Stack
-#include <stdio.h>
 #include <string>
 #include <iostream>
 #include <stack>
@@ -15,7 +14,7 @@ int Rank(char data) {
 }
 
 int main() {
-  int now_rank = 0, i = 0, j = 0;
+  int now_rank = -1, i = 0, j = 0;
   string infix;
   char postfix[100] = {0, };
   cin >> infix;
@@ -33,18 +32,29 @@ int main() {
         now_rank = Rank(infix.at(i));
       } else {
         while(!oper.empty()) {
-          now_rank = 0;
+          if(oper.top() == '(') {
+            oper.pop();
+            break;
+          }
+          now_rank = -1;
           postfix[j] = oper.top();
           oper.pop();
           j++;
         }
+        if(infix.at(i) != ')') oper.push(infix.at(i));
       }
     }
     i++;
   }
 
+  while(!oper.empty()) {
+    postfix[j] = oper.top();
+    oper.pop();
+    j++;
+  }
+
   for(int k = 0; k < infix.length(); k++) {
-    printf("%c", postfix[k]);
+    cout << postfix[k];
   }
   return 0;
 }
