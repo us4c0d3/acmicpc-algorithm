@@ -1,7 +1,7 @@
 //https://www.acmicpc.net/problem/1918
 //Stack
-#include <string>
 #include <iostream>
+#include <string>
 #include <stack>
 
 using namespace std;
@@ -20,7 +20,6 @@ int main() {
   cin >> infix;
 
   stack<char> oper;
-
 
   while(i < infix.length()) {
     if(infix.at(i) >= 'A' && infix.at(i) <= 'Z') {
@@ -46,7 +45,6 @@ int main() {
     }
     i++;
   }
-
   while(!oper.empty()) {
     postfix[j] = oper.top();
     oper.pop();
