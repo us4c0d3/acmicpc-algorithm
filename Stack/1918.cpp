@@ -44,6 +44,7 @@ int main() {
           oper.pop();
           j++;
         }
+        now_rank = 0;
       }
     }
     i++;
