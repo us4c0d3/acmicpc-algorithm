@@ -13,7 +13,7 @@ int Rank(char data) {
 }
 
 int main() {
-  int now_rank = 0, i = 0;
+  int i = 0;
   string infix;
   string postfix;
   cin >> infix;
@@ -36,13 +36,9 @@ int main() {
       }
       oper.pop();
 
-      now_rank = 0;
-      if(!oper.empty()) now_rank = Rank(oper.top());
 
-
-    } else if(now_rank < Rank(infix[i])) {
+    } else if(!oper.empty() && Rank(oper.top()) < Rank(infix[i])) {
       oper.push(infix[i]);
-      now_rank = Rank(oper.top());
 
 
     } else {
@@ -51,8 +47,6 @@ int main() {
         oper.pop();
       }
       oper.push(infix[i]);
-
-      now_rank = Rank(oper.top());
     }
   }
 
@@ -65,4 +59,4 @@ int main() {
   return 0;
 }
 
-//what the segfault__
+//32% get segfault
