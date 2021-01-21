@@ -34,7 +34,7 @@ int main() {
         postfix += oper.top();
         oper.pop();
       }
-      oper.pop();
+      if(oper.top() == '(') oper.pop();
 
 
     } else if(!oper.empty() && Rank(oper.top()) < Rank(infix[i])) {
@@ -42,7 +42,7 @@ int main() {
 
 
     } else {
-      while(!oper.empty() && oper.top() != '(') {
+      while(!oper.empty() && oper.top() != '(' && Rank(oper.top()) >= Rank(infix[i])) {
         postfix += oper.top();
         oper.pop();
       }
@@ -58,5 +58,3 @@ int main() {
   cout << postfix << endl;
   return 0;
 }
-
-//wrong answer;;
