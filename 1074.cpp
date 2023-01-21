@@ -24,4 +24,4 @@ int main() {
     cin >> N >> R >> C;
     Z(0, 0, (int)pow(2, N));
     return 0;
-}
+} 
