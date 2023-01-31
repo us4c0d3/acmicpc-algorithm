@@ -16,6 +16,12 @@ using ll = long long;
 using ull = unsigned long long;
 using u = unsigned;
 using pii = pair<int, int>;
+
+int main() {
+    fastio;
+    
+    
+}
 ```
 
 더 추가될 수 있음
