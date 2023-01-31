@@ -1,6 +1,6 @@
 # 공부용 백준 풀이 저장 레포
 
-[백준 사이트](https://www.acmicpc.net/)
+[백준 사이트](https://www.acmicpc.net/user/akame312)
 
 [solved.ac](https://solved.ac/profile/akame312)
 
