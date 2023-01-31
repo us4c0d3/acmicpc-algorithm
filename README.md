@@ -20,7 +20,7 @@ using pii = pair<int, int>;
 int main() {
     fastio;
     
-    
+    return 0;
 }
 ```
 
