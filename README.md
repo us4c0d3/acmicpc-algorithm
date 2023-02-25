@@ -6,7 +6,9 @@
 
 [blog](https://usani.tistory.com/)
 
-## default cpp setting
+## Settings
+
+### default cpp setting
 ```
 #include <bits/stdc++.h>
 #define fastio ios_base::sync_with_stdio(false);cin.tie(NULL);cout.tie(NULL);
@@ -26,7 +28,7 @@ int main() {
 
 더 추가될 수 있음
 
-# Searching Keywords
+### Searching Keywords
 
 `!@$me *s5..g5 s#1000..`
 
