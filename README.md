@@ -26,6 +26,10 @@ int main() {
 
 더 추가될 수 있음
 
+# Searching Keywords
+
+> !@$me *s5..g5 s#1000..
+
 
 ## TODO
 * 폴더 정리(알고리즘 or 날짜별)
