@@ -15,9 +15,10 @@ void solve() {
     queue<int> q;
 
     for(int i = 1; i <= n; i++) {
-        if(indegree[i] == 0) q.push(i);
+        if(indegree[i] == 0) q.push(i); // 가리키는 간선이 없으면 큐에 넣는다.
     }
 
+    // topological sort
     while(!q.empty()) {
         int cur = q.front(); q.pop();
         cout << cur << ' ';
@@ -37,7 +38,7 @@ int main() {
         int a, b;
         cin >> a >> b;
         v[a].push_back(b);
-        indegree[b]++;
+        indegree[b]++;  // b를 가리키는 간선의 개수
     }
     solve();
     return 0;
