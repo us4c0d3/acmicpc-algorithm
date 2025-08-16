@@ -29,9 +29,8 @@ int main() {
 ```
 
 ```python
-import sys
-
-input = sys.stdin.readline
+from sys import stdin as s
+input = lambda: s.readline().rstrip()
 ```
 
 더 추가될 수 있음
