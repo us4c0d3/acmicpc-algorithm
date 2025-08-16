@@ -7,3 +7,5 @@
 test*
 
 .gdb_history
+.cph
+.idea
