@@ -11,7 +11,9 @@
 ## Settings
 
 > VSCode with CPH
+> 
 > C++ 20
+> 
 > Python 3.12
 
 ### Boiler Plates
