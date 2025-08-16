@@ -10,7 +10,11 @@
 
 ## Settings
 
-### C++ Boiler Plate
+> VSCode with CPH
+> C++ 20
+> Python 3.12
+
+### Boiler Plates
 ```c
 #include <bits/stdc++.h>
 #define fastio ios_base::sync_with_stdio(false);cin.tie(NULL);cout.tie(NULL)
@@ -33,7 +37,6 @@ from sys import stdin as s
 input = lambda: s.readline().rstrip()
 ```
 
-더 추가될 수 있음
 
 ### Searching Keywords
 
@@ -43,4 +46,4 @@ input = lambda: s.readline().rstrip()
 - 20230116 ~ 20230327 1일 1솔 실천
 - 20230311 54일 연속 문제해결 후 스트릭 끊김
 - 20230316 ~ 20230327 `단계별로 풀어보기`진행
-- 20241121 ~ 가볍게 문풀 + 코테 준비 시작, python으로 문제풀기
+- 20250808 ~
