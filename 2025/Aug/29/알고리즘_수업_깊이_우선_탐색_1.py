@@ -1,6 +1,6 @@
 from sys import stdin as s
 import sys
-sys.setrecursionlimit(2000001)
+sys.setrecursionlimit(100_001)
 input = lambda: s.readline().rstrip()
 
 # main code
