@@ -8,11 +8,10 @@ INF = 10 ** 9
 n = int(input())
 m = int(input())
 
-graph = [[] for _ in range(n + 1)]
+graph = [[INF] * (n + 1) for _ in range(n + 1)]
 for _ in range(m):
     a, b, c = map(int, input().split())
-    graph[a].append((b, c))
-
+    graph[a][b] = min(graph[a][b], c)
 s, e = map(int, input().split())
 
 pq = []
@@ -24,10 +23,13 @@ while pq:
     if cost[cur] < cur_cost:
         continue
     cost[cur] = cur_cost
-    for nxt, nxt_cost in graph[cur]:
-        new_cost = cur_cost + nxt_cost
+    for nxt in range(1, n + 1):
+        if graph[cur][nxt] == INF:
+            continue
+        new_cost = cur_cost + graph[cur][nxt]
         if new_cost < cost[nxt]:
             cost[nxt] = new_cost
             heapq.heappush(pq, (new_cost, nxt))
+        
 
 print(cost[e])
