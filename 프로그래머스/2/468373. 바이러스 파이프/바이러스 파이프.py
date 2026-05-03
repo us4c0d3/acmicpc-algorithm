@@ -10,15 +10,15 @@ bfs => n => 100
 완탐 가능
 """
 
-def bfs(graph, infected, pipe_type):
+def bfs(graph, infected, ptype):
     # 현재 감염된 노드들에서 ptype 간선으로만 이동 가능한 노드 전부 추가
-    queue = deque([node for node in infected])
-    while queue:
-        node = queue.popleft()
-        for neighbor, ptype in graph[node]:
-            if pipe_type == ptype and neighbor not in infected:
+    q = deque([node for node in infected])
+    while q:
+        node = q.popleft()
+        for neighbor, t in graph[node]:
+            if ptype == t and neighbor not in infected:
                 infected.add(neighbor)
-                queue.append(neighbor)
+                q.append(neighbor)
     return infected
 
 def solution(n, infection, edges, k):
